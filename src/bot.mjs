@@ -10,7 +10,7 @@ dotenv.config() // Загружаем переменные окружения
 export const {
 	// Telegram bot token from t.me/BotFather
 	TELEGRAM_BOT_TOKEN: token,
-
+	REPO_PATH: repoPath,
 	// Secret token to validate incoming updates
 	TELEGRAM_SECRET_TOKEN: secretToken = String(token).split(":").pop(),
 } = process.env
