@@ -10,8 +10,14 @@ export const {
 
 } = process.env;
 
+
 // Default grammY bot instance
 export const bot = new Bot(token);
 
-// Sample handler for a simple echo bot
-bot.on("message:text", ctx => ctx.reply(ctx.msg.text));
+
+// Обработчик команды /start
+bot.command("start", (ctx) => {
+  ctx.reply("Привет! Давайте создадим новый пост. Введите заголовок:");
+  sessions.set(ctx.chat.id, { step: "title" });
+});
+
